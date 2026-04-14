@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Disclaimer</title>
+  <style>
+    :root {
+      --bg: #f5faf8;
+      --card: #ffffff;
+      --text: #1f2937;
+      --muted: #6b7280;
+      --heading: #0f172a;
+      --accent: #16a34a;
+      --accent-dark: #15803d;
+      --border: #e5e7eb;
+      --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+      --radius-xl: 28px;
+      --radius-lg: 18px;
+      --max-width: 980px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: "Inter", "Segoe UI", Arial, sans-serif;
+      background: linear-gradient(180deg, #eef8f3 0%, #f9fcfb 100%);
+      color: var(--text);
+      line-height: 1.75;
+      padding: 30px 16px;
+    }
+
+    .page-wrap {
+      max-width: var(--max-width);
+      margin: 0 auto;
+    }
+
+    .policy-card {
+      background: var(--card);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(229, 231, 235, 0.7);
+      overflow: hidden;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #f0fdf4 0%, #ecfdf5 40%, #ffffff 100%);
+      padding: 48px 32px 36px;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .hero-badge {
+      display: inline-block;
+      background: rgba(22, 163, 74, 0.08);
+      color: var(--accent-dark);
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+    }
+
+    .hero h1 {
+      font-size: clamp(32px, 5vw, 52px);
+      line-height: 1.15;
+      color: var(--heading);
+      font-weight: 800;
+      margin-bottom: 14px;
+    }
+
+    .hero p {
+      max-width: 760px;
+      margin: 0 auto;
+      font-size: 18px;
+      color: var(--muted);
+    }
+
+    .content {
+      padding: 34px 32px 40px;
+    }
+
+    .last-updated {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      margin-bottom: 28px;
+      color: var(--muted);
+      font-size: 15px;
+    }
+
+    .section {
+      margin-bottom: 34px;
+      padding-bottom: 26px;
+      border-bottom: 1px solid #f1f5f9;
+    }
+
+    .section:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .section h2 {
+      font-size: clamp(24px, 3vw, 34px);
+      line-height: 1.25;
+      color: var(--heading);
+      margin-bottom: 14px;
+      font-weight: 800;
+    }
+
+    .section h3 {
+      font-size: clamp(18px, 2vw, 24px);
+      line-height: 1.35;
+      color: var(--heading);
+      margin: 22px 0 10px;
+      font-weight: 700;
+    }
+
+    .section p {
+      font-size: 17px;
+      color: var(--text);
+      margin-bottom: 14px;
+    }
+
+    .section ul {
+      margin: 10px 0 16px 22px;
+    }
+
+    .section li {
+      margin-bottom: 10px;
+      color: var(--text);
+      font-size: 17px;
+    }
+
+    .highlight-box {
+      background: linear-gradient(180deg, #f9fffb 0%, #f3fff7 100%);
+      border: 1px solid #d1fae5;
+      border-left: 5px solid var(--accent);
+      border-radius: var(--radius-lg);
+      padding: 18px 18px;
+      margin-top: 16px;
+    }
+
+    .contact-box {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 22px;
+      margin-top: 14px;
+    }
+
+    .contact-box p {
+      margin-bottom: 10px;
+    }
+
+    .contact-box strong {
+      color: var(--heading);
+    }
+
+    .footer {
+      text-align: center;
+      padding: 26px 18px 34px;
+      color: var(--muted);
+      font-size: 14px;
+      border-top: 1px solid var(--border);
+      background: #fcfdfd;
+    }
+
+    @media (max-width: 768px) {
+      body {
+        padding: 16px 10px;
+      }
+
+      .hero {
+        padding: 34px 18px 26px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .content {
+        padding: 24px 18px 28px;
+      }
+
+      .section p,
+      .section li {
+        font-size: 16px;
+      }
+
+      .last-updated,
+      .highlight-box,
+      .contact-box {
+        padding: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-wrap">
+    <div class="policy-card">
+
+      <!-- HERO SECTION -->
+      <section class="hero">
+        
+        <h1>Disclaimer</h1>
+        
+      </section>
+
+      <!-- MAIN CONTENT -->
+      <main class="content">
+
+        <!-- LAST UPDATED -->
+        <div class="last-updated">
+          <strong>Last Updated:</strong> <i>Our Disclaimer was last updated on [05-04-2025]</i>.
+        </div>
+
+        <!-- INTRODUCTION -->
+        <section class="section">
+      
+          <p>
+           The content provided on this website is intended solely as an <strong>advertorial</strong> and should not be misconstrued as a genuine news article, blog post, or consumer protection update. The primary goal of this content is promotional. While it may contain factual information, testimonials, or user experiences, it is crafted with marketing intent and should be interpreted accordingly.<br><br>
+We strive to offer valuable and relevant information that can assist consumers in making informed decisions. However, the views and opinions expressed in this article may not necessarily reflect those of a news outlet or independent journalistic body. All product claims, statistics, or quotes should be independently verified with the manufacturer or official provider before relying on them for decision-making.
+<br><br>This article may reference or promote third-party products or services, and in some cases, we may receive financial compensation through affiliate links or other promotional partnerships. This does not increase the cost to you as a consumer, but it helps support the operation of this website. We only promote offerings that we believe may provide value, though your experience may vary.<br><br>
+It’s important to understand that this content is created for <strong>demonstration and informational purposes only</strong>. It is not a substitute for professional advice—whether medical, financial, or otherwise—and should not be relied upon as such. Always consult a qualified professional regarding any specific questions or concerns you may have.<br><br>
+By continuing to access or engage with this website, you acknowledge that you have read, understood, and agreed to be bound by our <strong>Terms & Conditions</strong> and <strong>Privacy Policy</strong>. Your use of this site implies acceptance of this disclaimer in full.
+
+          </p>
+        
+        </section>
+
+      </main>
+
+      <!-- FOOTER -->
+      <footer class="footer">
+        <P> © Copyright 2025 - All Rights Reserved</P>
+      </footer>
+
+    </div>
+  </div>
+
+</body>
+</html>

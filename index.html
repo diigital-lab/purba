@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The 7-Second Habit I Tried Before Bed… That Made Me Question Everything I Thought I Knew About My Blood Sugar</title>
+  <meta name="description" content="For two years, I did everything my doctor said. My numbers kept getting worse. Then a retired nurse said four words that changed how I understood my own body." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;1,9..40,400;1,9..40,500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #f8fafc;
+      --bg-soft: #ffffff;
+      --text: #0f172a;
+      --text-secondary: #334155;
+      --muted: #64748b;
+      --border: #e2e8f0;
+      --button: #16a34a;
+      --button-shadow: rgba(22, 163, 74, 0.24);
+      --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+      --max-width: 820px;
+      --sticky-height: 92px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'DM Sans', Arial, sans-serif;
+      background:
+        radial-gradient(circle at top right, rgba(187, 247, 208, 0.22), transparent 30%),
+        linear-gradient(180deg, #f8fafc 0%, #ffffff 28%, #ffffff 100%);
+      color: var(--text);
+      line-height: 1.78;
+      -webkit-font-smoothing: antialiased;
+      padding-bottom: var(--sticky-height);
+    }
+
+    /* Progress Bar */
+    .progress-wrap {
+      position: fixed; top: 0; left: 0;
+      width: 100%; height: 4px;
+      background: rgba(226,232,240,0.6);
+      z-index: 9999;
+    }
+    .progress-bar {
+      height: 100%; width: 0%;
+      background: linear-gradient(90deg, #16a34a, #22c55e);
+      transition: width 0.08s linear;
+    }
+
+    .page {
+      width: 100%;
+      max-width: var(--max-width);
+      margin: 0 auto;
+      padding: 18px 18px 42px;
+    }
+
+    .top-note {
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+      margin: 12px 0 14px;
+      font-weight: 400;
+    }
+
+    /* Hero */
+    .hero-card {
+      background: rgba(255,255,255,0.94);
+      border: 1px solid rgba(226,232,240,0.85);
+      border-radius: 24px;
+      padding: 22px 18px;
+      box-shadow: var(--card-shadow);
+    }
+
+    h1 {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 33px;
+      line-height: 1.16;
+      font-weight: 800;
+      text-align: center;
+      color: var(--text);
+      margin-bottom: 14px;
+      letter-spacing: -0.4px;
+    }
+
+    .subheadline {
+      font-size: 19px;
+      line-height: 1.5;
+      font-weight: 500;
+      text-align: center;
+      color: var(--text-secondary);
+      margin-bottom: 18px;
+    }
+
+    /* Images */
+    .hero-image,
+    .section-image {
+      width: 100%;
+      max-width: 520px;
+      height: 550px;
+      display: block;
+      margin: 18px auto;
+      border-radius: 22px;
+      object-fit: cover;
+      box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+    }
+
+    @media (max-width: 768px) {
+      .hero-image, .section-image {
+        max-width: 100%; height: auto;
+        border-radius: 18px;
+      }
+    }
+
+    .gif-image {
+      width: 180px; height: auto;
+      display: block; margin: 10px auto 20px;
+      border: none !important; box-shadow: none !important;
+      border-radius: 0 !important; background: transparent !important;
+    }
+
+    .image-caption {
+      text-align: center;
+      font-size: 14px;
+      color: var(--muted);
+      margin-top: 8px;
+      margin-bottom: 18px;
+    }
+
+    .story { margin-top: 14px; }
+
+    p {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 19px;
+      color: var(--text-secondary);
+      margin-bottom: 16px;
+      font-weight: 400;
+    }
+
+    .lead-quote { font-weight: 800; color: var(--text); }
+    .highlight  { font-weight: 700; color: var(--text); }
+
+    /* CTA */
+    .cta-wrap { margin: 22px 0 10px; }
+
+    .cta-btn {
+      display: block; width: 100%;
+      text-align: center; text-decoration: none;
+      background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+      color: #fff;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 19px; font-weight: 800;
+      padding: 18px 16px; border-radius: 18px;
+      box-shadow: 0 14px 28px var(--button-shadow);
+      transition: transform 0.18s ease, box-shadow 0.18s ease;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+    .cta-btn:hover { transform: translateY(-1px); box-shadow: 0 16px 30px rgba(22,163,74,0.28); }
+
+    .cta-sub {
+      text-align: center; font-size: 13px;
+      color: var(--muted); margin-top: 10px;
+    }
+
+    /* Section Cards */
+    .section-card {
+      margin-top: 22px;
+      background: var(--bg-soft);
+      border: 1px solid rgba(226,232,240,0.9);
+      border-radius: 22px;
+      padding: 22px 18px;
+      box-shadow: var(--card-shadow);
+    }
+
+    .section-card h2 {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 26px; line-height: 1.24;
+      font-weight: 800; color: var(--text);
+      margin-bottom: 14px; letter-spacing: -0.2px;
+    }
+
+    .section-card h3 {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 21px; line-height: 1.3;
+      font-weight: 700; color: var(--text);
+      margin-top: 22px; margin-bottom: 12px;
+    }
+
+    .quote-box {
+      margin: 16px 0 20px; padding: 16px 20px;
+      border-radius: 16px; background: #f8fafc;
+      border-left: 4px solid #16a34a;
+      color: var(--text); font-weight: 600;
+      font-size: 18px; line-height: 1.65;
+      font-style: italic;
+    }
+
+    .bullet-block {
+      margin-top: 18px; padding: 18px;
+      border-radius: 18px;
+      background: linear-gradient(180deg, #fff 0%, #f8fafc 100%);
+      border: 1px solid var(--border);
+    }
+
+    .bullet-title {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 20px; font-weight: 800;
+      color: var(--text); margin-bottom: 12px;
+    }
+
+    .bullet-list { list-style: none; padding-left: 0; }
+
+    .bullet-list li {
+      position: relative; padding-left: 30px;
+      margin-bottom: 12px; font-size: 18px;
+      line-height: 1.65; color: var(--text-secondary);
+    }
+    .bullet-list li::before {
+      content: "✓"; position: absolute;
+      left: 0; top: 0;
+      font-weight: 800; color: var(--button);
+    }
+
+    /* Sticky CTA */
+    .sticky-cta {
+      position: fixed; left: 0; right: 0; bottom: 0;
+      z-index: 9998;
+      background: rgba(255,255,255,0.96);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid rgba(226,232,240,0.95);
+      padding: 10px 12px calc(10px + env(safe-area-inset-bottom));
+      box-shadow: 0 -8px 24px rgba(15,23,42,0.06);
+    }
+    .sticky-inner {
+      max-width: 820px; margin: 0 auto;
+      display: flex; gap: 10px; align-items: center;
+    }
+    .sticky-text { flex: 1; min-width: 0; }
+    .sticky-label { font-size: 11px; color: var(--muted); margin-bottom: 4px; }
+    .sticky-title {
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 13px; color: var(--text);
+      font-weight: 700; white-space: nowrap;
+      overflow: hidden; text-overflow: ellipsis;
+    }
+    .sticky-btn {
+      flex-shrink: 0; display: inline-block;
+      text-decoration: none;
+      background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+      color: #fff;
+      font-family: 'DM Sans', Arial, sans-serif;
+      font-size: 14px; font-weight: 800;
+      padding: 13px 14px; border-radius: 14px;
+      box-shadow: 0 10px 20px rgba(22,163,74,0.22);
+      white-space: nowrap;
+    }
+
+    @media (min-width: 992px) {
+      .sticky-cta { display: none; }
+      body { padding-bottom: 0; }
+    }
+
+    @media (max-width: 767px) {
+      .page { padding: 14px 16px 36px; }
+      .hero-card, .section-card { padding: 16px; }
+      h1 { font-size: 27px; }
+      .subheadline { font-size: 17px; }
+      .section-card h2 { font-size: 22px; }
+      .section-card h3 { font-size: 19px; }
+      p { font-size: 17px; }
+      .cta-btn { font-size: 17px; padding: 17px 14px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+
+  <main class="page">
+
+    <div class="top-note">A personal story — two years of doing everything right. And still losing.</div>
+
+    <!-- =====================
+         HERO CARD
+    ===================== -->
+    <section class="hero-card">
+
+      <h1>The 7-Second Habit That Made Me Question My Blood Sugar</h1>
+
+      <div class="subheadline">
+        Two years. Cutting carbs. Checking levels. Walking every morning. And my numbers kept getting worse. Then one conversation made me realize I'd been focused on the wrong thing entirely.
+      </div>
+
+      <!-- HERO IMAGE PLACEHOLDER -->
+      <img src="images/1.webp" alt="" class="hero-image" loading="eager" />
+      <div class="image-caption">I didn’t realize it that night. But that kitchen conversation was the beginning of everything.</div>
+
+      <div class="story">
+
+        <p><span class="lead-quote">I used to set my alarm 15 minutes early just to sit on the edge of the bed.</span></p>
+
+        <p>Not to meditate. Not to pray. Just to sit there long enough for the dizziness to pass and my feet to feel like they were actually mine again.</p>
+
+        <p>My joints ached like I'd slept on concrete. My feet buzzed with a sensation I couldn't name. Some mornings, the walk to the bathroom left me winded. And the embarrassing part? I hadn't even had breakfast yet.</p>
+
+        <p>I was 58. And I felt like I was renting space in a body that had already decided to quit — while my mind kept making plans it couldn't keep.</p>
+
+        <p>My blood sugar had been flagged as "a concern" for three years. Every appointment, the conversation crept closer to something I wasn't ready to hear. Insulin. Metformin. "Long-term management."</p>
+
+        <p>I kept pushing back. <span class="highlight">"Give me more time. I'll figure this out."</span></p>
+
+        <p>What I didn't realize — not yet — was that I was working incredibly hard on completely the wrong problem.</p>
+
+      </div>
+
+      <div class="cta-wrap">
+        <a href="https://hop.clickbank.net/?affiliate=fleswar&vendor=gluco6&pid=vsl&tid=meta" class="cta-btn">👉 Watch The Short Video That Explains Everything</a>
+        <div class="cta-sub">Takes just a few minutes. Could change how you think about this forever.</div>
+      </div>
+    </section>
+
+    <!-- =====================
+         SECTION 2 — PROBLEM + FAILED SOLUTIONS
+    ===================== -->
+    <section class="section-card">
+      <h2>I Wasn't Being Lazy. I Was Just Solving The Wrong Problem.</h2>
+
+      <p>For two years straight, I followed the rules. Every single one of them.</p>
+
+      <p>I cut the bread. Cut the pasta. Cut the rice. Said no to birthday cake at my own granddaughter's party. I walked every morning, even in January, even when my knees felt like they were full of gravel. I bought a glucose monitor and checked my levels so often my fingertips were permanently sore.</p>
+
+      <p>I tried apple cider vinegar before every meal. I tried cinnamon capsules. I bought a $47 "30-Day Blood Sugar Reset" program online — followed it to the letter — and spent an entire month hungry, irritable, and no better off than when I started.</p>
+
+      <p>And here's the part that nobody warns you about — the part that quietly destroyed me.</p>
+
+      <p>Sometimes it almost worked. For a week, maybe ten days, the numbers would inch down. A careful, fragile hope would build. Maybe this is it. Maybe I've finally cracked it.</p>
+
+      <p>And then — without warning, without any change in what I was doing — the numbers would climb right back up. Sometimes higher than before.</p>
+
+      <p>I was exhausted by noon and wired at midnight, lying there in the dark running through everything I'd eaten that day, trying to figure out what I'd done wrong. My brain felt foggy in a way that made me wonder if I was just getting old — or if something was actually breaking down inside me. And somehow, despite eating less than I ever had in my life, I'd gained eight pounds in six months.</p>
+
+      <div class="quote-box">"You're doing everything right. Some people just have bodies that fight them."</div>
+
+      <p>My doctor said it gently, at my last visit before Thanksgiving. She wasn't being dismissive.</p>
+
+      <p>But I drove home in silence and sat in the driveway for a long time. Engine off. Too tired to go inside. What she was telling me — gently, carefully — was: <span class="highlight">this is your life now. Stop expecting it to be different.</span></p>
+
+      <p>I wasn't ready to hear that. I refused to hear it.</p>
+
+      <p>But I also didn't know what else to try.</p>
+    </section>
+
+    <!-- =====================
+         SECTION 3 — LOW POINT + DISCOVERY
+    ===================== -->
+    <section class="section-card">
+      <h2>The Moment That Broke Me — And The Quiet Conversation That Put Me Back Together</h2>
+
+      <!-- IMAGE PLACEHOLDER -->
+      <img src="images/2.webp" alt="" class="section-image" loading="lazy" />
+      <div class="image-caption">It took one honest conversation to change the direction of everything.</div>
+
+      <p>Last Thanksgiving, my grandkids spent the afternoon running wild in my sister Linda's backyard. Laughing. Shrieking. That thing kids do when they have no idea how lucky they are.</p>
+
+      <p>I watched from the porch. The whole time.</p>
+
+      <p>My seven-year-old sprinted over and grabbed both my hands. "Grandma, COME ON!" Wide eyes. Completely certain I would come.</p>
+
+      <p>I told her I'd cheer from here. That I was the official watcher.</p>
+
+      <p>She let go of my hands and ran back to her cousins. Didn't pout. Didn't argue. Just… accepted it.</p>
+
+      <p>That's the moment that broke me. Not a bad lab result. Not a doctor's worried face. Just a seven-year-old girl who had already learned not to expect too much from her grandmother. That's when I understood what this was really costing me.</p>
+
+      <p>I sat there holding my coffee with both hands, staring out at the yard, and I thought: when did I become someone who watches from the porch? And worse — how many more moments like this one was I willing to lose?</p>
+
+      <p>That night I stayed to help Linda clean up. Her neighbor Barbara was there — retired nurse, late sixties, hair gone silver. I'd met her before. But that night I noticed something I hadn't.</p>
+
+      <p>She looked well. Not "well for her age." Not "pretty good considering." Just genuinely, quietly well — the way people look when they've stopped fighting their body and started working with it. I couldn't explain it. I just noticed it, in the way you notice something that you used to have.</p>
+
+      <p>I knew she'd dealt with blood sugar problems for years. Linda had mentioned it once.</p>
+
+      <p>So I put down the dish I was drying and just asked. Directly. I was still raw from the porch. I'd run out of patience for being subtle.</p>
+
+      <p>"Barbara. Whatever you're doing — I need to know. Because I feel terrible and I've tried everything and I don't know what I'm missing."</p>
+
+      <p>She looked at me with the kind of calm that comes from having been exactly where I was standing. Then she said, simply:</p>
+
+      <div class="quote-box">"I stopped blaming my diet. I stopped blaming myself."</div>
+
+      <p>I waited. Surely there was more.</p>
+
+      <p>She shook her head. "That's really it. Once I understood what was actually driving my blood sugar — and it had nothing to do with food — everything else started to make sense."</p>
+
+      <p>I asked her what she meant.</p>
+
+      <p>She said: "It's not about your willpower. It's not about portion sizes. It's not even about carbs." She paused, like she was choosing her words carefully. "It's something that happens inside your cells. Something that most doctors don't think to look at — and most patients never hear about."</p>
+
+      <p><span class="highlight">Something happening inside your cells. That most people are never told about.</span></p>
+
+      <p>I didn't fully understand it. But for the first time in two years, I felt something other than tired.</p>
+
+      <p>I felt curious. And underneath that — something I hadn't felt in a long time. Something that felt dangerously close to hope.</p>
+    </section>
+
+    <!-- =====================
+         SECTION 4 — MECHANISM TEASE
+    ===================== -->
+    <section class="section-card">
+      <h2>She Described It Like A Switch Your Body Forgot How To Flip — And It Had Nothing To Do With What You’re Eating</h2>
+
+      <p>Barbara didn't lecture. She just talked — the way people do when something genuinely changed things for them.</p>
+
+      <p>She said: imagine your cells each have a tiny door. And the whole job of that door is to let sugar through — pull glucose out of your blood and convert it into actual energy your body can use.</p>
+
+      <p>When those doors work, everything runs as it should. You eat. Your body handles it. Your blood sugar stays balanced almost automatically.</p>
+
+      <p>But here's where it gets interesting.</p>
+
+      <p>She said those doors can get overwhelmed. Flooded. Stuck. And when that happens — which she said is quietly happening in millions of people over 40, not because they're weak or undisciplined, but because of something most of us have never been told to watch for — those doors start to jam. Then they stop opening altogether. And the whole system starts to turn against you.</p>
+
+      <p>And when they stop opening, glucose has nowhere to go. It just stays in the bloodstream.</p>
+
+      <p>Your blood sugar rises. Your energy crashes. Your body, trying to compensate, stores the excess as fat. And it doesn't matter how little you eat — because the problem was never the food. It's the system that was supposed to handle it, quietly failing from the inside.</p>
+
+      <div class="quote-box">"You're trying to fix a plumbing problem by changing what comes out of the tap. You need to fix the pipes."</div>
+
+      <p>That analogy hit me hard.</p>
+
+      <p>I had been obsessing over the tap — every meal, every snack, every carb — while the pipes quietly fell apart.</p>
+
+      <p>Then she said something that I honestly wasn't prepared for.</p>
+
+      <p>She said researchers — at institutions whose names you'd recognize — had been studying a natural compound. Something used for centuries in a remote part of East Africa, by people who almost never developed this kind of blood sugar problem. According to the studies she'd read, it appeared to help those cellular doors come back online — to respond the way they were designed to.</p>
+
+      <p>Not a medication. Not a supplement I'd ever seen advertised. Something most people in this country have never heard of — and might never hear of, unless someone happens to mention it in a kitchen at exactly the right moment.</p>
+
+      <p>She didn't have all the details with her. But she told me exactly where I could find out more.</p>
+
+      <p><span class="highlight">I drove home with the windows down, replaying every word. For the first time in years, I wasn't thinking about what to cut. I was thinking about something I'd never once considered.</span></p>
+
+      <p>What if the problem was never the food? What if I'd been given a set of rules for a game that was never the actual game?</p>
+
+      <div class="cta-wrap">
+        <a href="https://hop.clickbank.net/?affiliate=fleswar&vendor=gluco6&pid=vsl&tid=meta" class="cta-btn">👉 Show Me What Barbara Was Talking About</a>
+        <div class="cta-sub">There's a short video that explains exactly what she described — and why nobody told us about this sooner.</div>
+      </div>
+    </section>
+
+    <!-- =====================
+         SECTION 5 — RESULTS + VIDEO TRANSITION
+    ===================== -->
+    <section class="section-card">
+      <h2>My Doctor's Reaction Three Months Later Told Me Everything I Needed To Know</h2>
+
+      <!-- IMAGE PLACEHOLDER -->
+      <img src="images/3.webp" alt="" class="section-image" loading="lazy" />
+
+      <p>The first two weeks? Nothing obvious happened. I kept checking my levels. Kept second-guessing. Had moments where I thought: maybe this is just another thing that doesn't work for me.</p>
+
+      <p>But then — gradually, in a way you don't notice until you suddenly do — something started shifting.</p>
+
+      <p>The first thing I noticed was my mornings. That fifteen-minute sit-on-the-edge-of-the-bed ritual got shorter. Then it was gone. I was just… getting up. Like a normal person.</p>
+
+      <p>The afternoon fog — that wall of exhaustion I'd hit every day around two o'clock for the past two years — started to soften. Then it was mostly gone.</p>
+
+      <p>At six weeks, I stepped on the scale mostly out of habit. Nine pounds. Without changing my meals. Without adding anything to my walks.</p>
+
+      <p>At my next check-up, my doctor went quiet when she pulled up my results. She looked at the screen. Then at me. Then back at the screen.</p>
+
+      <p><span class="highlight">"Whatever you've been doing… keep doing it. This is impressive."</span></p>
+
+      <p>She never asked what it was. I think part of me wanted her to. But honestly, I didn't need her to. I already knew.</p>
+
+      <h3>This Past Christmas, I Chased My Granddaughter Around The Backyard For 20 Minutes</h3>
+
+      <p>She nearly wore me out. I let her. No excuses. No drifting back to the porch. I stayed in that yard until she was ready to go in.</p>
+
+      <p>That was the moment I knew something had genuinely changed. Not a number on a lab report. Not a doctor's surprised face. Just me, in a backyard, chasing a seven-year-old in the cold December air.</p>
+
+      <p>The heavy, foggy, watching-from-the-porch version of me felt very far away.</p>
+
+      <p>If you've been living in that fog — slow, quiet, this-must-just-be-aging — you already know why that afternoon meant everything.</p>
+
+      <p>It wasn't a miracle. It was just my life. Finally feeling like mine again.</p>
+    </section>
+
+    <!-- =====================
+         FINAL SECTION — CTA
+    ===================== -->
+    <section class="section-card">
+      <h2>If You've Done Everything Right And Still Can't Win… This Little Video Might Explain Why</h2>
+
+      <p>I'm telling you all of this because for two years, I blamed myself. I thought I wasn't disciplined enough. Wasn't trying hard enough. Wasn't strong enough to figure it out. And not one person — not my doctor, not a single article I read — ever stopped to suggest that maybe I was looking at the wrong part of the problem entirely.</p>
+
+      <p>Two years. One kitchen conversation. That's all it took to change the entire frame.</p>
+
+      <p>If any part of this sounds familiar — the effort without results, the hope that keeps crashing, the quiet wondering what you're still missing — this video is worth your time.</p>
+
+      <p>It's the clearest explanation I've found of what Barbara described that night. The science behind it. The research. The compound. All laid out simply, without jargon, without pressure.</p>
+
+      <p>It's right below. Short. But it might be the thing that finally makes the whole picture click — the way that kitchen conversation clicked for me.</p>
+
+      <div class="bullet-block">
+        <div class="bullet-title">What the video covers — and what nobody told me for two years:</div>
+        <ul class="bullet-list">
+          <li>Why your diet efforts keep working briefly — then quietly fail — and why that's not your fault</li>
+          <li>The cellular mechanism that most doctors never test for, and what happens when it breaks down after 40</li>
+          <li>The natural compound found in East Africa that researchers believe helps "unstick" this system</li>
+          <li>Why this isn't about eating less or trying harder — and what actually needs to change</li>
+        </ul>
+      </div>
+
+      <!-- GIF ARROW PLACEHOLDER -->
+      <img src="images/4.gif" class="gif-image" alt="" />
+       <a href="https://hop.clickbank.net/?affiliate=fleswar&vendor=gluco6&pid=vsl&tid=meta" target="_blank" rel="sponsored noopener">
+    <img src="images/5.webp" 
+         alt="Description of image" 
+         loading="lazy" 
+         style="
+            display: block; 
+            width: 50%; 
+            max-width: 520px; 
+            height: auto; 
+            margin: 18px auto; 
+            border-radius: 22px; 
+            box-shadow: 0 18px 40px rgba(15,23,42,0.12);
+            cursor: pointer;
+         ">
+</a>
+      <div class="cta-wrap">
+        <a href="https://hop.clickbank.net/?affiliate=fleswar&vendor=gluco6&pid=vsl&tid=meta" class="cta-btn">👉 Watch The Video — I Think You'll Understand It Immediately</a>
+        <div class="cta-sub"><!--Free to watch. No sign-up. No pressure.--> If it resonates the way it did for me, you'll know within the first two minutes.</div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <div class="sticky-inner">
+      <div class="sticky-text">
+        <div class="sticky-label">Personal story</div>
+        <div class="sticky-title">Why doing everything right still isn't enough — and what actually changes things</div>
+      </div>
+      <a href="https://hop.clickbank.net/?affiliate=fleswar&vendor=gluco6&pid=vsl&tid=meta" class="sticky-btn">Watch Now →</a>
+    </div>
+  </div>
+
+<!-- LEGAL FOOTER START -->
+<footer style="
+  background: #000000;
+  color: #000000;
+  text-align: center;
+  padding: 36px 28px 28px;
+  font-family: 'DM Sans', Arial, sans-serif;
+  line-height: 1.6;
+  max-width: 820px;
+  margin: 22px auto 0;
+  border-radius: 0;
+  border: 1px solid rgba(203, 213, 225, 0.12);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.12);
+">
+
+  <p style="color:#57748B; font-weight:600; font-size:12px; margin-bottom:8px;">
+    © 2025 All Rights Reserved
+  </p>
+
+  <p style="font-size:11px; margin-bottom:12px;">
+    <a href="Privacy Policy.html" style="color:#cbd5e1; text-decoration:none; margin:0 6px;">Privacy Policy</a>
+    |
+    <a href="Terms and Conditions.html" style="color:#cbd5e1; text-decoration:none; margin:0 6px;">Terms &amp; Conditions</a>
+    |
+    <a href="Disclaimer.html" style="color:#cbd5e1; text-decoration:none; margin:0 6px;">Disclaimer</a>
+  </p>
+
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 8px;">
+    This site is not a part of the Facebook website or Facebook Inc. Additionally, this site is NOT endorsed by Facebook in any way. FACEBOOK is a trademark of FACEBOOK, Inc.
+  
+  </p>
+
+  <p style="color:#57748B; font-weight:600; font-size:11px; margin:10px 0 6px;">
+    FDA Compliance Notice
+  </p>
+
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 8px;">
+    The information on this website has not been evaluated by the Food & Drug Administration or any other regulatory body. We do not aim to diagnose, treat, cure, or prevent any skin conditions or diseases. This content shares a personal story and opinion for informational and educational purposes only.
+  </p>
+
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 8px;">
+    This site may contain affiliate links, which means we may earn a commission if you choose to make a purchase through certain links.
+  </p>
+
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 8px;">
+    This site may contain affiliate links, which means we may earn a commission if you choose to make a purchase through certain links.
+    You should always consult a dermatologist or healthcare professional before using any skincare products or following any skincare advice, especially if you have sensitive skin, allergies, or underlying medical conditions.
+  </p>
+
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 0;">
+    Results May Vary: Skincare results and testimonials featured on this site are not a guarantee of specific outcomes. Individual results may vary based on factors such as skin type, genetics, environmental influences, and skincare routine.
+  </p>
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 0;">
+    Some names and personal identifying details have been changed to protect privacy.
+  </p>
+  <p style="font-size:11px; color:#57748B; max-width:760px; margin:0 auto 0;">
+    No individual result should be considered typical.
+  </p>
+</footer>
+<!-- LEGAL FOOTER END -->
+
+  <script>
+    (function () {
+      const bar = document.getElementById('progressBar');
+      function update() {
+        const s = window.scrollY || window.pageYOffset;
+        const h = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = (h > 0 ? (s / h) * 100 : 0) + '%';
+      }
+      window.addEventListener('scroll', update, { passive: true });
+      window.addEventListener('load', update);
+      window.addEventListener('resize', update);
+    })();
+  </script>
+
+</body>
+</html>
